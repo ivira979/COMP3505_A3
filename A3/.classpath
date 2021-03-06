@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="JFreeChart v2.0/JFreeChart/src"/>
+	<classpathentry kind="src" path="test"/>
+	<classpathentry kind="src" path="lib"/>
+	<classpathentry excluding="JFreeChart/src/" kind="src" path="JFreeChart v2.0"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="/Users/irfan/Documents/School/Software Testing/COMP3505_A3/A3/lib/gnujaxp.jar"/>
+	<classpathentry exported="true" kind="lib" path="/Users/irfan/Documents/School/Software Testing/COMP3505_A3/A3/lib/jcommon-1.0.0-rc1-cvs.jar"/>
+	<classpathentry exported="true" kind="lib" path="/Users/irfan/Documents/School/Software Testing/COMP3505_A3/A3/lib/mockito-all-2.0.2-beta.jar"/>
+	<classpathentry exported="true" kind="lib" path="/Users/irfan/Documents/School/Software Testing/COMP3505_A3/A3/lib/jcommon-1.0.5.jar"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
+	<classpathentry exported="true" kind="lib" path="/Users/irfan/Documents/School/Software Testing/COMP3505_A3/A3/lib/servlet.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
