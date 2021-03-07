@@ -27,5 +27,5 @@ jobs:
           mkdir bin
           mkdir lib
           curl https://repo1.maven.org/maven2/org/junit/platform/junit-platform-console-standalone/1.5.2/junit-platform-console-standalone-1.5.2.jar -o lib/junit-platform-console-standalone-1.5.2.jar
-          javac -sourcepath ./JFreeChart\ v2.0/JFreeChart/src/ -cp ./lib/gnujaxp.jar:./lib/jcommon-1.0.0-rc1-cvs.jar:./lib/jcommon-1.0.5.jar:./lib/mockito-all-2.0.2-beta.jar:./lib/servlet.jar -d bin/ JFreeChart\ v2.0/JFreeChart/src/org/jfree/data/DataUtilities.java
+          javac -sourcepath ./JFreeChart\ v2.0/JFreeChart/src/ -cp ./lib/gnujaxp.jar:./lib/jcommon-1.0.0-rc1-cvs.jar:./lib/jcommon-1.0.5.jar:./lib/mockito-all-2.0.2-beta.jar:./lib/servlet.jar -d bin/ ./JFreeChart\ v2.0/JFreeChart/src/org/jfree/data/DataUtilities.java
           java -cp ./lib/mockito-all-2.0.2-beta.jar -jar lib/junit-platform-console-standalone-1.5.2.jar -classpath ./lib/mockito-all-2.0.2-beta.jar -classpath ./bin  -classpath ./lib/jcommon-1.0.0-rc1-cvs.jar -classpath ./lib/jcommon-1.0.5.jar --scan-class-path
