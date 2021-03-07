@@ -7,6 +7,8 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
+import java.security.InvalidParameterException;
+
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -55,6 +57,12 @@ class CalculateColumnTotalTest {
 	static double getSum(double arg1, double arg2, double arg3, double arg4) {
 		
 		return arg1+arg2+arg3+arg4;
+	}
+	
+	
+	@Test
+	void testNullValue() {
+		assertThrows(InvalidParameterException.class, () -> {DataUtilities.calculateColumnTotal(null, 0);});
 	}
 	
 	//Invalid Column Value

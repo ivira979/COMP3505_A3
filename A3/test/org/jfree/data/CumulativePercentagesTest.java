@@ -3,6 +3,7 @@ package org.jfree.data;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
+import java.security.InvalidParameterException;
 import java.util.ArrayList;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -211,7 +212,7 @@ void testStub(){
   
   @Test
   void testNullValues() {
-	  assertThrows(IllegalArgumentException.class, () -> {DataUtilities.getCumulativePercentages(null);});
+	  assertThrows(InvalidParameterException.class, () -> {DataUtilities.getCumulativePercentages(null);});
   }
  
 }

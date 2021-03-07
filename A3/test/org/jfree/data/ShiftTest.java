@@ -2,6 +2,7 @@ package org.jfree.data;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.security.InvalidParameterException;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
@@ -26,6 +27,11 @@ void tearDown() throws Exception {
 static void tearDownAfterClass() throws Exception {
 }
 
+
+@Test
+void testNullValue() {
+	assertThrows(InvalidParameterException.class, () -> {Range.shift(null, 0.0);});
+}
 
 @Test
 void testPositiveValuesForLBAndUBWithShiftPositive() {

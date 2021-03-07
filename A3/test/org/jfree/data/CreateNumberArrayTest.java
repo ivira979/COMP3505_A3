@@ -2,6 +2,7 @@ package org.jfree.data;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.security.InvalidParameterException;
 import java.util.Arrays;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -137,9 +138,10 @@ void testEmptyArray() {
 void testNullArray() {
 	double[] doubleArray = null;
 	
-	assertThrows(IllegalArgumentException.class, () -> {DataUtilities.createNumberArray(doubleArray);});
+	assertThrows(InvalidParameterException.class, () -> {DataUtilities.createNumberArray(doubleArray);});
 
 
 }
+
 
 }

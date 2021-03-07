@@ -4,6 +4,8 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
+import java.security.InvalidParameterException;
+
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -37,6 +39,13 @@ class CalculateRowTotalTest {
 		
 		return arg1+arg2+arg3+arg4;
 	}
+	
+	@Test
+	void testNullValue() {
+		assertThrows(InvalidParameterException.class, () -> {DataUtilities.calculateRowTotal(null, 0);});
+	}
+	
+	
 	//Invalid Row Values
 	
 	@Test
