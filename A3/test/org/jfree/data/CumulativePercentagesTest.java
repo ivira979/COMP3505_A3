@@ -12,8 +12,7 @@ import org.junit.jupiter.api.Test;
 class CumulativePercentagesTest {
 	
 private KeyedValues keyedValues, keyedValues2, keyedValues3, 
-	keyedValues4, keyedValues5, keyedValues6 = mock(KeyedValues.class);
-
+	keyedValues4, keyedValues5, keyedValues6;
 
 @BeforeEach
 void setUp() throws Exception {
@@ -93,10 +92,7 @@ void setUp() throws Exception {
 		  when(keyedValues6.getKey(1)).thenReturn(1);
 }
 
-@Test
-void testStub(){
-	assertTrue(true);
-}
+
 
 /*
  * @Test void testEmptyArg() { KeyedValues actual; ArrayList expected = new
@@ -205,7 +201,7 @@ void testStub(){
  }
   
   @Test void testCumulativePercentages_8() { KeyedValues actual =
-  DataUtilities.getCumulativePercentages(keyedValues5); assertAll( () ->
+  DataUtilities.getCumulativePercentages(keyedValues6); assertAll( () ->
   assertEquals(-5.0/0.0, actual.getValue(0).doubleValue(), 0.1d), () ->
   assertEquals(5.0/0.0, actual.getValue(1).doubleValue(), 0.1d) );
    }
