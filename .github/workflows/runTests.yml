@@ -28,6 +28,6 @@ jobs:
           mkdir lib
           curl https://repo1.maven.org/maven2/org/junit/platform/junit-platform-console-standalone/1.5.2/junit-platform-console-standalone-1.5.2.jar -o lib/junit-platform-console-standalone-1.5.2.jar
           javac -d bin/ A3/JFreeChart\ v2.0/JFreeChart/src/org/jfree/data/Range.java
-          javac -d bin/ A3/JFreeChart\ v2.0/JFreeChart/src/org/jfree/data/DataUtilities.java
+          javac -d bin/ A3/JFreeChart\ v2.0/JFreeChart/src/org/jfree/data/DataUtilities.java -cp ./lib/*;A3/JFreeChart\ v2.0/JFreeChart/src/org/jfree/data/;
           javac -d bin -cp bin:lib/junit-platform-console-standalone-1.5.2.jar test/*
           java -jar lib/junit-platform-console-standalone-1.5.2.jar --class-path bin --scan-class-path
