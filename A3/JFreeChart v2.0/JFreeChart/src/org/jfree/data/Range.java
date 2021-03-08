@@ -60,6 +60,7 @@
 package org.jfree.data;
 
 import java.io.Serializable;
+import java.security.*;
 
 /**
  * Represents an immutable range of values.
@@ -85,7 +86,7 @@ public strictfp class Range implements Serializable {
         if (lower > upper) {
             String msg = "Range(double, double): require lower (" + lower 
                 + ") <= upper (" + upper + ").";
-            throw new IllegalArgumentException(msg);
+            throw new InvalidParameterException(msg);
         }
         this.lower = lower;
         this.upper = upper;
@@ -252,7 +253,7 @@ public strictfp class Range implements Serializable {
     public static Range expand(Range range, 
                                double lowerMargin, double upperMargin) {
         if (range == null) {
-            throw new IllegalArgumentException("Null 'range' argument.");   
+            throw new InvalidParameterException("Null 'range' argument.");   
         }
         double length = range.getLength();
         double lower = length * lowerMargin;
@@ -291,7 +292,10 @@ public strictfp class Range implements Serializable {
      */
     public static Range shift(Range base, double delta, 
                               boolean allowZeroCrossing) {
-        if (allowZeroCrossing) {
+        if (base == null) {
+            throw new InvalidParameterException("Null 'data' argument.");   
+        }
+    	if (allowZeroCrossing) {
             return new Range(base.getLowerBound() + delta, 
                     base.getUpperBound() + delta);
         }
@@ -312,6 +316,7 @@ public strictfp class Range implements Serializable {
      * @return The adjusted value.
      */
     private static double shiftWithNoZeroCrossing(double value, double delta) {
+    	
         if (value > 0.0) {
             return Math.max(value + delta, 0.0);  
         }
